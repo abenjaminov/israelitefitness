@@ -6,20 +6,20 @@
   <div class="app-main-menu">
     <div *ngFor="let menuItem of menuItems" class="app-menu-item" [ngClass]="{'selected' : selectedMenuItem == menuItem}"
           (click)="onMenuItemClicked(menuItem)">
-      {{menuItem.title}}
+      <a [routerLink]="menuItem.link">{{menuItem.title}}</a>
     </div>
   </div>
 </div>
-<router-outlet></router-outlet>
+<router-outlet class="view"></router-outlet>
 <div class="app-footer">
   <div class="footer-part social-media">
     <div class="footer-part-item">
       <i class="fab fa-facebook"></i>
-      <div>Israel Elite Fitness on Facebook</div>
+      <div>Israel Elite Fitness</div>
     </div>
     <div class="footer-part-item">
       <i class="fab fa-instagram"></i>
-      <div>@israelitefitness on Instagram</div>
+      <div>@israelitefitness</div>
     </div>
   </div>
 </div>

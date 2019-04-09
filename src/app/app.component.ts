@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 class AppMenuItem {
   
-  constructor(private title) {
+  constructor(private title, private link:string) {
 
   }
 }
@@ -24,14 +24,11 @@ export class AppComponent {
   ngOnInit() {
     this.menuItems = [];
     
-    var home = new AppMenuItem("Home");
+    var home = new AppMenuItem("Home",'/');
     this.menuItems.push(home);
 
-    var records = new AppMenuItem("Records");
+    var records = new AppMenuItem("Records",'/records');
     this.menuItems.push(records);
-
-    var posts = new AppMenuItem("Posts");
-    this.menuItems.push(posts);
 
     this.selectedMenuItem = this.menuItems[0];
   }

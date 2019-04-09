@@ -1,3 +1,11 @@
-<p>
-  records works!
-</p>
+<div class="ief-records">
+  <div class="card-item record-item box" *ngFor="let record of recordService.records">
+    <div class="card-header">
+      <i class="far card-icon" [ngClass]="record.recordType == 0 ? 'fa-clock' : 'fa-clipboard'"></i>
+      <div>{{record.name}}</div>
+    </div>
+    <div class="card-value">
+      <pre>{{record.description}}</pre>
+    </div>
+  </div>
+</div>

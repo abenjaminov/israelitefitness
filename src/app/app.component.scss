@@ -23,6 +23,11 @@
             margin-right: 20px;
             cursor: pointer;
             padding: 5px;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
             
             &.selected {
                 border-bottom: 1px solid white;
@@ -36,7 +41,7 @@
     bottom: 0px;
     right:0px;
     left:0px;
-    height:100px;
+    height:60px;
     background: #5352c4;
     color:white;
     width:100%;

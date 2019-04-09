@@ -1,0 +1,14 @@
+.ief-records {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 15px;
+    flex-flow: wrap;
+    overflow-y: scroll;
+
+    .record-item {
+        width: 165px;
+        height: 170px;
+        margin-bottom: 25px;
+    }
+}
