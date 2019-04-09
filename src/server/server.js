@@ -3,6 +3,8 @@ const path = require("path");
 
 const app = express();
 
+console.log(__dirname + '../../dist/israel-elite-fitness')
+
 app.use(express.static(__dirname + '../../dist/israel-elite-fitness'));
 
 app.get('/*', (req,res) => {
