@@ -4,7 +4,7 @@ import { RecordsComponent } from './records/records.component';
 
 const routes: Routes = [
   {
-    path: 'records',
+    path: '/',
     component: RecordsComponent
   }
 ];
