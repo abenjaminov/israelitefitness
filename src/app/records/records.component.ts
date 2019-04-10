@@ -10,8 +10,8 @@ import { RecordService } from './records.service';
 })
 export class RecordsComponent implements OnInit {
 
-  
-  constructor(private recordService:RecordService) { 
+
+  constructor(public recordService:RecordService) { 
     
   }
 
