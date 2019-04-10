@@ -1,11 +1,14 @@
-<div class="ief-records">
+<div class="ief-records view">
   <div class="card-item record-item box" *ngFor="let record of recordService.records">
     <div class="card-header">
-      <i class="far card-icon" [ngClass]="record.recordType == 0 ? 'fa-clock' : 'fa-clipboard'"></i>
+      <i class="card-icon" [ngClass]="record.iconClass"></i>
       <div>{{record.name}}</div>
     </div>
     <div class="card-value">
       <pre>{{record.description}}</pre>
+    </div>
+    <div class="card-footer" *ngIf="record.weights">
+        <pre>{{record.weights}}</pre>
     </div>
   </div>
 </div>

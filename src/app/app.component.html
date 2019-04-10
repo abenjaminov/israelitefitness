@@ -1,16 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="app-header">
-  <div>
-    Welcome to {{ title }}!
+  <div class="title">
+    Fitness Israeli records
   </div>
-  <div class="app-main-menu">
+  <!-- <div class="app-main-menu">
     <div *ngFor="let menuItem of menuItems" class="app-menu-item" [ngClass]="{'selected' : selectedMenuItem == menuItem}"
           (click)="onMenuItemClicked(menuItem)">
       <a [routerLink]="menuItem.link">{{menuItem.title}}</a>
     </div>
-  </div>
+  </div> -->
 </div>
-<router-outlet class="view"></router-outlet>
+<router-outlet></router-outlet>
 <div class="app-footer">
   <div class="footer-part social-media">
     <div class="footer-part-item">

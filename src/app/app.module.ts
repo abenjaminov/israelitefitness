@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecordsComponent } from './records/records.component';
 import { RecordService } from './records/records.service';
+import { ViewDirective } from './components/directives/view.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RecordsComponent
+    RecordsComponent,
+    ViewDirective
   ],
   imports: [
     BrowserModule,

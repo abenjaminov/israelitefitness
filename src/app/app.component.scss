@@ -4,10 +4,14 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 150px;
+    height: 50px;
     background: #5352c4;
     color:white;
     position: relative;
+
+    .title {
+        font-size:24px;
+    }
 
     .app-main-menu {
         display: flex;

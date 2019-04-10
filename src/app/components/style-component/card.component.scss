@@ -23,8 +23,26 @@
 
     .card-value {
         font-size: 16px;
-        text-align: center;
-        padding-top: 10px;
+        display: flex;
+        align-items: flex-start;
+        width: calc(100% - 15px);
+        padding-left: 15px;
+        margin-top: 10px;
+
+        pre {
+            margin:0px;
+        }
+    }
+
+    .card-footer {
+        display: flex;
+        font-size: 14px;
+        align-items: flex-start;
+        width: calc(100% - 15px);
+        margin-top: 4px;
+        padding-left: 15px;
+        padding-top: 7px;
+        border-top: 1px solid rgba($color: #7e808e, $alpha: 0.45) ;
 
         pre {
             margin:0px;
