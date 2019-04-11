@@ -7,13 +7,15 @@ import { RecordsComponent } from './records/records.component';
 import { RecordService } from './records/records.service';
 import { ViewDirective } from './components/directives/view.directive';
 import { SideMenuComponent } from './side-menu/side-menu.component';
+import { StandardsComponent } from './standards/standards.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecordsComponent,
     ViewDirective,
-    SideMenuComponent
+    SideMenuComponent,
+    StandardsComponent
   ],
   imports: [
     BrowserModule,

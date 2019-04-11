@@ -3,7 +3,7 @@
     <div class="menu-item" [ngClass]="{'selected' : menuItem == selectedMenuItem}" 
         *ngFor="let menuItem of menuItems"
         (click)="menuItemClicked($event, menuItem)">
-      {{menuItem.title}}
+      <a [routerLink]="menuItem.link">{{menuItem.title}}</a>
     </div>
   </div>
 </div>

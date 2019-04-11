@@ -19,8 +19,11 @@ export class AppComponent {
   ngOnInit() {
     this.menuItems = [];
   
-    var records = new AppMenuItem("Records",'');
+    var records = new AppMenuItem("Records",'/records');
     this.menuItems.push(records);
+
+    var standards = new AppMenuItem("Standards",'/standards');
+    this.menuItems.push(standards);
   }
 
   onSideMenuToggleClicked() {

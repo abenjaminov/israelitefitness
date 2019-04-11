@@ -1,0 +1,11 @@
+.stripe-item {
+    background-color:white;
+    display: flex;
+    align-items: center;
+    height: 100px;
+
+    .stripe-icon {
+        background-color:#7e808e;
+        flex: 1 1 50px;
+    }
+}

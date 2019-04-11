@@ -2,9 +2,10 @@ import { Component, OnInit, Input, ElementRef, Renderer2, AfterContentInit, View
 import * as velocity from 'velocity-animate'
 import * as $ from 'jquery';
 import { EventEmitter } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 export class AppMenuItem {
-  constructor(private title, private link:string) {
+  constructor(private title, public link:string) {
 
   }
 }
@@ -25,7 +26,7 @@ export class SideMenuComponent implements AfterContentInit, OnChanges {
 
   @ViewChild("menu") menuRef: ElementRef;
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2, private router: Router) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes["open"] && !changes["open"].firstChange) {
@@ -43,7 +44,21 @@ export class SideMenuComponent implements AfterContentInit, OnChanges {
       this.renderer.setStyle(this.menuRef.nativeElement,"left", -this.menuWidth + "px")
     }
 
-    this.selectedMenuItem = this.menuItems[0];
+    this.router.events.subscribe((value) => {
+      if(value instanceof NavigationEnd) {
+        this.setSelectedMenuItem();
+      }
+    })
+    
+  }
+
+  setSelectedMenuItem() {
+    for(var i = 0; i <this.menuItems.length; i++) {
+      if(this.router.url === this.menuItems[i].link) {
+        this.selectedMenuItem = this.menuItems[0];
+        return;
+      }
+    }
   }
 
   closeMenu($event: MouseEvent) {
