@@ -55,7 +55,7 @@ export class SideMenuComponent implements AfterContentInit, OnChanges {
   setSelectedMenuItem() {
     for(var i = 0; i <this.menuItems.length; i++) {
       if(this.router.url === this.menuItems[i].link) {
-        this.selectedMenuItem = this.menuItems[0];
+        this.selectedMenuItem = this.menuItems[i];
         return;
       }
     }

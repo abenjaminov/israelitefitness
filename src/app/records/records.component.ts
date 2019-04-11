@@ -17,7 +17,7 @@ export class RecordsComponent implements OnInit {
 
   ngOnInit() {
     this.recordService.loadRecords().subscribe(() => {
-      console.log(this.recordService.records);
+      
     })
   }
 }

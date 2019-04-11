@@ -1,0 +1,10 @@
+.ief-standards {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    overflow-y: scroll;
+
+    .movement-item {
+        margin-bottom: 5px;
+    }
+}

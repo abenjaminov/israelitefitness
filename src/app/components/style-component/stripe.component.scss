@@ -2,10 +2,27 @@
     background-color:white;
     display: flex;
     align-items: center;
-    height: 100px;
+    flex: 0 0 35px;
+    height: 35px;
+    justify-content: flex-start;
 
     .stripe-icon {
         background-color:#7e808e;
-        flex: 1 1 50px;
+        flex: 0 0 35px;
+        height: 100%;
+        color:white;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .stripe-value {
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    .stripe-right {
+        margin-left: auto;
+        margin-right: 10px;
     }
 }

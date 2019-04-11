@@ -8,6 +8,7 @@ import { RecordService } from './records/records.service';
 import { ViewDirective } from './components/directives/view.directive';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { StandardsComponent } from './standards/standards.component';
+import { MovementService } from './services/movement.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { StandardsComponent } from './standards/standards.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [RecordService],
+  providers: [RecordService, MovementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

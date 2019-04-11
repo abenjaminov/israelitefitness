@@ -151,7 +151,7 @@ export class RecordService {
             this.records.push(new Record("Fight Gone Bad",RecordType.reps, this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "3 Rounds for total reps in 17 minutes\n1 min WallBalls\n1 min Sumo Deadlift High pull\n1 min Box Jumps\n1 min Push Press\n1 min Row Cal\n1 min Rest";
-            this.records[index].weights = "Wallbals Men - 9kg to 3m target\n\t Women - 6kg to 2.74 target\nMen - 35kg Barbell\nWomen - 25kg Barbell";
+            this.records[index].weights = "Wallballs Men - 9kg to 3m target\n\t Women - 6kg to 2.74 target\nBox Jumps Men - 60cm Box\n\t Women - 50cm Box\nMen - 35kg Barbell\nWomen - 25kg Barbell";
             index++;
 
             this.records.push(new Record("DT",RecordType.time, this.allAgeGroups));

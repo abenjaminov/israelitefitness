@@ -1,9 +1,8 @@
 <div class="ief-side-menu" (click)="closeMenu($event)" #menu>
   <div class="menu view" is-full-screen="true">
     <div class="menu-item" [ngClass]="{'selected' : menuItem == selectedMenuItem}" 
-        *ngFor="let menuItem of menuItems"
-        (click)="menuItemClicked($event, menuItem)">
-      <a [routerLink]="menuItem.link">{{menuItem.title}}</a>
+        *ngFor="let menuItem of menuItems">
+      <a [routerLink]="menuItem.link" (click)="menuItemClicked($event, menuItem)">{{menuItem.title}}</a>
     </div>
   </div>
 </div>
