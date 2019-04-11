@@ -9,7 +9,10 @@
       <a [routerLink]="menuItem.link">{{menuItem.title}}</a>
     </div>
   </div> -->
+  <i class="fa fa-bars" (click)="onSideMenuToggleClicked()">
+  </i>
 </div>
+<app-side-menu [items]="menuItems" [(open)]="sideMenuOpen"></app-side-menu>
 <router-outlet></router-outlet>
 <div class="app-footer">
   <div class="footer-part social-media">

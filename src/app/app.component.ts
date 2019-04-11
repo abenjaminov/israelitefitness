@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
+import { AppMenuItem } from './side-menu/side-menu.component';
 
-class AppMenuItem {
-  
-  constructor(private title, private link:string) {
 
-  }
-}
 
 @Component({
   selector: 'app-root',
@@ -16,6 +12,7 @@ export class AppComponent {
   menuItems: Array<AppMenuItem>;
   selectedMenuItem: AppMenuItem;
   title = 'Israel Elite Fitness';
+  sideMenuOpen:boolean = false;
 
   constructor() {
 
@@ -33,7 +30,7 @@ export class AppComponent {
     this.selectedMenuItem = this.menuItems[0];
   }
 
-  onMenuItemClicked(menuItem: AppMenuItem) {
-    this.selectedMenuItem = menuItem;
+  onSideMenuToggleClicked() {
+    this.sideMenuOpen = !this.sideMenuOpen;
   }
 }

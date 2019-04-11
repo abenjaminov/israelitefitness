@@ -1,0 +1,22 @@
+.ief-side-menu {
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+
+    .menu {
+        background-color:#5352c4;
+        width: 175px;
+    }
+
+    .menu-item {
+        width: calc(100% - 7px);
+        color:white;
+        padding: 0px 10px 7px 10px;
+
+        &.selected {
+            background-color: rgba($color: white, $alpha: 0.45);
+            font-weight: bold;
+        }
+    }
+}
