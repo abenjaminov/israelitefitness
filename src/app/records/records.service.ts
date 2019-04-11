@@ -162,7 +162,7 @@ export class RecordService {
 
             this.records.push(new Record("Pullups",RecordType.reps, this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
-            this.records[index].description = "Max reps unbroken";
+            this.records[index].description = "Maximum reps unbroken";
             index++;
 
             this.selectedRecord = this.records[0];
