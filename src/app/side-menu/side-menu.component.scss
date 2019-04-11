@@ -12,7 +12,7 @@
     .menu-item {
         width: calc(100% - 7px);
         color:white;
-        padding: 0px 10px 7px 10px;
+        padding: 5px 0px 5px 7px;
 
         &.selected {
             background-color: rgba($color: white, $alpha: 0.45);

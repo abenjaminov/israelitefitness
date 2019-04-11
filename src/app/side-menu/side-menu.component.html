@@ -1,6 +1,8 @@
-<div class="ief-side-menu view" (click)="closeMenu()" #menu>
-  <div class="menu view">
-    <div class="menu-item" *ngFor="let menuItem of menuItems">
+<div class="ief-side-menu" (click)="closeMenu($event)" #menu>
+  <div class="menu view" is-full-screen="true">
+    <div class="menu-item" [ngClass]="{'selected' : menuItem == selectedMenuItem}" 
+        *ngFor="let menuItem of menuItems"
+        (click)="menuItemClicked($event, menuItem)">
       {{menuItem.title}}
     </div>
   </div>

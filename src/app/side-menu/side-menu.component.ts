@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ElementRef, Renderer2, AfterContentInit, ViewChild, SimpleChanges, OnChanges, Output } from '@angular/core';
 import * as velocity from 'velocity-animate'
+import * as $ from 'jquery';
 import { EventEmitter } from '@angular/core';
 
 export class AppMenuItem {
@@ -20,6 +21,7 @@ export class SideMenuComponent implements AfterContentInit, OnChanges {
   @Output() openChange = new EventEmitter();
 
   menuWidth: number;
+  selectedMenuItem: AppMenuItem;
 
   @ViewChild("menu") menuRef: ElementRef;
 
@@ -40,12 +42,23 @@ export class SideMenuComponent implements AfterContentInit, OnChanges {
     else {
       this.renderer.setStyle(this.menuRef.nativeElement,"left", -this.menuWidth + "px")
     }
+
+    this.selectedMenuItem = this.menuItems[0];
   }
 
-  closeMenu() {
+  closeMenu($event: MouseEvent) {
     this.open = false;
-    this.openChange.emit(this.open.toString());
+    this.openChange.emit(this.open);
     this.animateMenu();
+  }
+
+  menuItemClicked($event: MouseEvent , menuItem:AppMenuItem) {
+    if(this.selectedMenuItem == menuItem) {
+      $event.stopPropagation();
+      return;
+    }
+
+    this.selectedMenuItem = menuItem;
   }
 
   animateMenu() {

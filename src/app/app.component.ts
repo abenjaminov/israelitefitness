@@ -10,8 +10,6 @@ import { AppMenuItem } from './side-menu/side-menu.component';
 })
 export class AppComponent {
   menuItems: Array<AppMenuItem>;
-  selectedMenuItem: AppMenuItem;
-  title = 'Israel Elite Fitness';
   sideMenuOpen:boolean = false;
 
   constructor() {
@@ -20,14 +18,9 @@ export class AppComponent {
 
   ngOnInit() {
     this.menuItems = [];
-    
-    var home = new AppMenuItem("Home",'/');
-    this.menuItems.push(home);
-
-    var records = new AppMenuItem("Records",'/records');
+  
+    var records = new AppMenuItem("Records",'');
     this.menuItems.push(records);
-
-    this.selectedMenuItem = this.menuItems[0];
   }
 
   onSideMenuToggleClicked() {
