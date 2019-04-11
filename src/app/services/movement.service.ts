@@ -8,6 +8,31 @@ export class Movement {
     }
 }
 
+export enum MovementID {
+    thruster = 1,
+    pullup = 2,
+    clean = 3,
+    squatClean = 4,
+    hangPowerClean = 5,
+    pushup = 6,
+    airSquat = 7,
+    deadlift = 8,
+    hadnstandPushup = 9,
+    ringDip = 10,
+    snatch = 11,
+    squatSnatch = 12,
+    row = 13,
+    wallball = 14,
+    muscleup = 15,
+    benechPress = 16,
+    press = 17,
+    jerk = 18,
+    situp = 19,
+    backSquat = 20,
+    shoulderToOverhead = 21,
+    barMuscleup = 22
+}
+
 @Injectable()
 export class MovementService {
     public movements: Array<Movement> = [];
@@ -18,26 +43,28 @@ export class MovementService {
 
     loadMovements() : Observable<any> {
         return of({}).pipe(tap(() => {
-            this.movements.push(new Movement(1, "Thruster"));
-            this.movements.push(new Movement(2, "Pullup"));
-            this.movements.push(new Movement(4, "Clean"));
-            this.movements.push(new Movement(5, "Squat Clean"));
-            this.movements.push(new Movement(6, "Hang Power Clean"));
-            this.movements.push(new Movement(7, "Pushup"));
-            this.movements.push(new Movement(8, "Squat"));
-            this.movements.push(new Movement(9, "Deadlift"));
-            this.movements.push(new Movement(10, "Handstand Pushup"));
-            this.movements.push(new Movement(11, "Ring Dip"));
-            this.movements.push(new Movement(12, "Snatch"));
-            this.movements.push(new Movement(13, "Squat Snatch"));
-            this.movements.push(new Movement(14, "Row"));
-            this.movements.push(new Movement(15, "Wallball"));
-            this.movements.push(new Movement(16, "Muscleup"));
-            this.movements.push(new Movement(17, "Bench Press"));
-            this.movements.push(new Movement(18, "Press"));
-            this.movements.push(new Movement(19, "Push Press"));
-            this.movements.push(new Movement(20, "Sumo Deadlift High Pull"));
-            this.movements.push(new Movement(21, "Box Jump"));
+            this.movements.push(new Movement(MovementID.thruster, "Thruster"));
+            this.movements.push(new Movement(MovementID.pullup, "Pullup"));
+            this.movements.push(new Movement(MovementID.clean, "Clean"));
+            this.movements.push(new Movement(MovementID.squatClean, "Squat Clean"));
+            this.movements.push(new Movement(MovementID.hangPowerClean, "Hang Power Clean"));
+            this.movements.push(new Movement(MovementID.pushup, "Pushup"));
+            this.movements.push(new Movement(MovementID.airSquat, "Air Squat"));
+            this.movements.push(new Movement(MovementID.deadlift, "Deadlift"));
+            this.movements.push(new Movement(MovementID.hadnstandPushup, "Handstand Pushup"));
+            this.movements.push(new Movement(MovementID.ringDip, "Ring Dip"));
+            this.movements.push(new Movement(MovementID.snatch, "Snatch"));
+            this.movements.push(new Movement(MovementID.squatSnatch, "Squat Snatch"));
+            this.movements.push(new Movement(MovementID.row, "Row"));
+            this.movements.push(new Movement(MovementID.wallball, "Wallball"));
+            this.movements.push(new Movement(MovementID.muscleup, "Muscleup"));
+            this.movements.push(new Movement(MovementID.benechPress, "Bench Press"));
+            this.movements.push(new Movement(MovementID.press, "Press"));
+            this.movements.push(new Movement(MovementID.jerk, "Jerk"));
+            this.movements.push(new Movement(MovementID.situp, "Situp"));
+            this.movements.push(new Movement(MovementID.situp, "Back Squat"));
+            this.movements.push(new Movement(MovementID.shoulderToOverhead, "Shoulder to Overhead"));
+            this.movements.push(new Movement(MovementID.barMuscleup, "Bar Muscleup"));
         }));
     }
 }

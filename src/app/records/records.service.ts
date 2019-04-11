@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from 'rxjs';
 import { tap }  from 'rxjs/operators'
+import { MovementService, MovementID } from '../services/movement.service';
 
 export enum AgeGroupType {
     ag1834 = 0,
@@ -32,7 +33,9 @@ export enum AgeGroupType {
   
     constructor(private name:string,
                 private recordType:RecordType, 
-                ageGroups: Array<AgeGroup>) {
+                private movements: Array<MovementID>,
+                ageGroups: Array<AgeGroup>,
+                ) {
       this.ageGroups = [];
   
       for(var i = 0; i < ageGroups.length; i++) {
@@ -63,7 +66,7 @@ export class RecordService {
 
     selectedRecord: Record;
 
-    constructor() {
+    constructor(private movementService: MovementService) {
         this.allAgeGroups.push(new AgeGroup(AgeGroupType.ag1834, "18-34"));
         this.allAgeGroups.push(new AgeGroup(AgeGroupType.ag3539, "35-39"));
         this.allAgeGroups.push(new AgeGroup(AgeGroupType.ag4044, "40-44"));
@@ -79,88 +82,92 @@ export class RecordService {
         return of({}).pipe(tap(() => {
             var index = 0;
 
-            this.records.push(new Record("Fran",RecordType.time, this.allAgeGroups));
+            this.records.push(new Record("Fran",RecordType.time,[MovementID.thruster, MovementID.pullup], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "2:34",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For Time\n21-15-9 reps of\nThrusters\nPullups"
             this.records[index].weights = "Men - 42.5kg Barbell\nWomen - 30kg Barbell"
             index++;
 
-            this.records.push(new Record("Grace",RecordType.time, this.allAgeGroups));
+            this.records.push(new Record("Grace",RecordType.time,[MovementID.clean, MovementID.jerk], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For Time\n30 reps of\nClean & Jerk";
             this.records[index].weights = "Men - 60kg Barbell\nWomen - 42.5kg Barbell"
             index++;
 
-            this.records.push(new Record("Cindy",RecordType.reps, this.allAgeGroups));
+            this.records.push(new Record("Cindy",RecordType.reps,[MovementID.pullup, MovementID.pushup, MovementID.airSquat], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "150",new Date(2019,21,3),"Israel Israeli");
-            this.records[index].description = "As many rounds in 20 mins of\n5 Pullups\n10 Pushups\n15 Squats";
+            this.records[index].description = "As many rounds in 20 mins of\n5 Pullups\n10 Pushups\n15 Air Squats";
             index++;
 
-            this.records.push(new Record("Diane",RecordType.time, this.allAgeGroups));
+            this.records.push(new Record("Diane",RecordType.time,[MovementID.deadlift, MovementID.hadnstandPushup], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For Time\n21-15-9 reps of\nDeadlifts\nHandstand Pushups";
-            this.records[index].weights = "Men - 102.5kg Barbell \nWomen - 70kg Barbell\n**For Handstand Pushup standards - Click"
+            this.records[index].weights = "Men - 102.5kg Barbell \nWomen - 70kg Barbell"
             index++;
 
-            this.records.push(new Record("Elizabeth",RecordType.time, this.allAgeGroups));
+            this.records.push(new Record("Elizabeth",RecordType.time,[MovementID.squatClean, MovementID.ringDip], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For Time\n21-15-9 reps of\nSquat Cleans\nRing Dips";
             this.records[index].weights = "Men - 60kg Barbell\nWomen - 42.5kg Barbell"
             index++;
 
-            this.records.push(new Record("Isabel",RecordType.time, this.allAgeGroups));
+            this.records.push(new Record("Isabel",RecordType.time,[MovementID.snatch], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For Time\n30 reps of\nSnatches";
             this.records[index].weights = "Men - 60kg Barbell\nWomen - 42.5kg Barbell"
             index++;
 
-            this.records.push(new Record("Jackie",RecordType.time, this.allAgeGroups));
+            this.records.push(new Record("Jackie",RecordType.time,[MovementID.row, MovementID.thruster, MovementID.pullup], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For Time\n1,000 meter Row\n50 Thrusters\n30 Pullups";
             this.records[index].weights = "Concept 2 Rower\nMen - 20kg Barbell\nWomen - 15kg Barbell"
             index++;
 
-            this.records.push(new Record("Karen",RecordType.time, this.allAgeGroups));
+            this.records.push(new Record("Karen",RecordType.time,[MovementID.wallball], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For Time\n150 Wallballs";
             this.records[index].weights = "Men - 9kg WallBall to 3 meter target \nWomen - 6kg WallBall to 2.74 meter target";
             index++;
 
-            this.records.push(new Record("Amanda",RecordType.time, this.allAgeGroups));
+            this.records.push(new Record("Amanda",RecordType.time,[MovementID.muscleup, MovementID.squatSnatch], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For time\n9-7-5 reps of\nMuscleups\nSquat Snatches";
             this.records[index].weights = "Men - 60kg Barbell\nWomen - 42.5kg Barbell"
             index++;
 
-            this.records.push(new Record("Linda",RecordType.time, this.allAgeGroups));
+            this.records.push(new Record("Linda",RecordType.time,[MovementID.deadlift, MovementID.benechPress, MovementID.clean], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For Time\n10-9-8-7-6-5-4-3-2-1 reps of\nDeadlifts\nBench Presses\nCleans";
             this.records[index].weights = "Deadlift - 1.5 Bodyweight Barbell\nBench Press - Bodyweight Barbell\nClean - 3/4 Bodyweight Barbell";
             index++;
 
-            this.records.push(new Record("Angie",RecordType.time, this.allAgeGroups));
+            this.records.push(new Record("Angie",RecordType.time,[MovementID.pullup, MovementID.pushup, MovementID.airSquat, MovementID.situp], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For Time\n100 Pullups\n100 Pushups\n100 Situps\n100 Squats";
             index++;
 
-            this.records.push(new Record("Total",RecordType.weight, this.allAgeGroups));
+            this.records.push(new Record("Total",RecordType.weight,[MovementID.backSquat, MovementID.press, MovementID.deadlift], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For Max Weight\nBack Squat\nPress\nDeadlift";
             index++;
 
-            this.records.push(new Record("Fight Gone Bad",RecordType.reps, this.allAgeGroups));
-            this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
-            this.records[index].description = "3 Rounds for total reps in 17 minutes\n1 min WallBalls\n1 min Sumo Deadlift High pull\n1 min Box Jumps\n1 min Push Press\n1 min Row Cal\n1 min Rest";
-            this.records[index].weights = "Wallballs Men - 9kg to 3m target\n\t Women - 6kg to 2.74 target\nBox Jumps Men - 60cm Box\n\t Women - 50cm Box\nMen - 35kg Barbell\nWomen - 25kg Barbell";
-            index++;
-
-            this.records.push(new Record("DT",RecordType.time, this.allAgeGroups));
+            this.records.push(new Record("DT",RecordType.time,[MovementID.deadlift, MovementID.hangPowerClean, MovementID.shoulderToOverhead], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "5 Rounds for time\n12 Deadlift\n9 Hang Power Clean\n6 Shoulder to Overhead";
             this.records[index].weights = "Men - 70kg Barbell\nWomen - 47.5kg Barbell";
             index++;
 
-            this.records.push(new Record("Pullups",RecordType.reps, this.allAgeGroups));
+            this.records.push(new Record("Pullups",RecordType.reps,[MovementID.pullup], this.allAgeGroups));
+            this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
+            this.records[index].description = "Maximum reps unbroken";
+            index++;
+
+            this.records.push(new Record("Muscleups",RecordType.reps,[MovementID.muscleup], this.allAgeGroups));
+            this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
+            this.records[index].description = "Maximum reps unbroken";
+            index++;
+
+            this.records.push(new Record("Bar Muscleups",RecordType.reps,[MovementID.barMuscleup], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "Maximum reps unbroken";
             index++;
