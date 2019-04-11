@@ -8,7 +8,7 @@ import { MovementService } from '../services/movement.service';
 })
 export class StandardsComponent implements OnInit {
 
-  constructor(private movementService: MovementService) { }
+  constructor(public movementService: MovementService) { }
 
   ngOnInit() {
     this.movementService.loadMovements().subscribe(() => {
