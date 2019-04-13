@@ -11,6 +11,7 @@ import { StandardsComponent } from './standards/standards.component';
 import { MovementService } from './services/movement.service';
 import { PopupService } from './services/popup.service';
 import { PopupComponent } from './components/popup/popup.component';
+import { ComponentHostDirective } from './components/directives/component-host.directive';
 
 @NgModule({
   declarations: [ 
@@ -19,7 +20,8 @@ import { PopupComponent } from './components/popup/popup.component';
     ViewDirective,
     SideMenuComponent,
     StandardsComponent,
-    PopupComponent
+    PopupComponent,
+    ComponentHostDirective
   ],
   imports: [
     BrowserModule,
