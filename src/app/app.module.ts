@@ -28,6 +28,7 @@ import { ComponentHostDirective } from './components/directives/component-host.d
     AppRoutingModule
   ],
   providers: [RecordService, MovementService, PopupService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PopupComponent]
 })
 export class AppModule { }

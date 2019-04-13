@@ -1,3 +1,11 @@
-<p>
-  popup works!
-</p>
+<div class="ief-popup box" #popup>
+  <div class="popup-title">
+    {{data.title}}
+  </div>
+  <div class="popup-text">
+    {{data.text}}
+  </div>
+  <div (click)="closePopup()">
+    Click here to close
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovementService, Movement } from '../services/movement.service';
+import { PopupService, PopupData } from '../services/popup.service';
 
 @Component({
   selector: 'app-standards',
@@ -8,7 +9,7 @@ import { MovementService, Movement } from '../services/movement.service';
 })
 export class StandardsComponent implements OnInit {
 
-  constructor(public movementService: MovementService) { }
+  constructor(public movementService: MovementService, private popupService: PopupService) { }
 
   ngOnInit() {
     this.movementService.loadMovements().subscribe(() => {
@@ -17,6 +18,6 @@ export class StandardsComponent implements OnInit {
   }
 
   movementClicked(movement: Movement) {
-
+    this.popupService.showPopup(new PopupData(movement.name,"Standards will be published soon."));
   }
 }

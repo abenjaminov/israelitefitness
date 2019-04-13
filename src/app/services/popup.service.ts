@@ -3,7 +3,9 @@ import { ComponentHostDirective } from '../components/directives/component-host.
 import { PopupComponent } from '../components/popup/popup.component';
 
 export class PopupData {
-    title:string;
+    closePopup: Function;
+
+    constructor(public title:string, public text:string) {}
 }
 
 @Injectable()
@@ -19,6 +21,13 @@ export class PopupService {
     }
 
     showPopup(popupData: PopupData) {
+
+        if(!popupData.closePopup) {
+            popupData.closePopup = () => {
+                this.popupHost.viewContainerRef.clear();
+            }
+        }
+
         var componentFactory = this.componentFactoryResolve.resolveComponentFactory(PopupComponent);
         var viewContainerRef = this.popupHost.viewContainerRef;
         viewContainerRef.clear();

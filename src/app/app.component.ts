@@ -14,7 +14,7 @@ export class AppComponent {
   menuItems: Array<AppMenuItem>;
   sideMenuOpen:boolean = false;
 
-  @ViewChild("componentHost") componentHost: ComponentHostDirective;
+  @ViewChild(ComponentHostDirective) componentHost: ComponentHostDirective;
 
   constructor(private popupService: PopupService) {
 
@@ -26,8 +26,8 @@ export class AppComponent {
     var records = new AppMenuItem("Records",'/records');
     this.menuItems.push(records);
 
-    // var standards = new AppMenuItem("Standards",'/standards');
-    // this.menuItems.push(standards);
+    var standards = new AppMenuItem("Standards",'/standards');
+    this.menuItems.push(standards);
   }
 
   ngAfterContentInit() {
