@@ -3,26 +3,21 @@
   <div class="title">
     Fitness Israeli records
   </div>
-  <!-- <div class="app-main-menu">
-    <div *ngFor="let menuItem of menuItems" class="app-menu-item" [ngClass]="{'selected' : selectedMenuItem == menuItem}"
-          (click)="onMenuItemClicked(menuItem)">
-      <a [routerLink]="menuItem.link">{{menuItem.title}}</a>
-    </div>
-  </div> -->
   <i class="fa fa-bars" (click)="onSideMenuToggleClicked()">
   </i>
 </div>
+<ng-template comp-host #componentHost></ng-template>
 <app-side-menu [items]="menuItems" [(open)]="sideMenuOpen"></app-side-menu>
 <router-outlet></router-outlet>
 <div class="app-footer">
   <div class="footer-part social-media">
     <div class="footer-part-item">
       <i class="fab fa-facebook"></i>
-      <div>Israel Elite Fitness</div>
+      <a href="https://www.facebook.com/israelitefitness">Israel Elite Fitness</a>
     </div>
     <div class="footer-part-item">
       <i class="fab fa-instagram"></i>
-      <div>@israelitefitness</div>
+      <a href="https://instagram.com/israelitefitness?utm_source=ig_profile_share&igshid=s1826nefvexm">@israelitefitness</a>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MovementService } from '../services/movement.service';
+import { MovementService, Movement } from '../services/movement.service';
 
 @Component({
   selector: 'app-standards',
@@ -16,4 +16,7 @@ export class StandardsComponent implements OnInit {
     })
   }
 
+  movementClicked(movement: Movement) {
+
+  }
 }

@@ -9,20 +9,23 @@ import { ViewDirective } from './components/directives/view.directive';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { StandardsComponent } from './standards/standards.component';
 import { MovementService } from './services/movement.service';
+import { PopupService } from './services/popup.service';
+import { PopupComponent } from './components/popup/popup.component';
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     AppComponent,
     RecordsComponent,
     ViewDirective,
     SideMenuComponent,
-    StandardsComponent
+    StandardsComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [RecordService, MovementService],
+  providers: [RecordService, MovementService, PopupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
