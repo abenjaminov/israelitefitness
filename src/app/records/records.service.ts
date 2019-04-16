@@ -141,11 +141,6 @@ export class RecordService {
             this.records[index].weights = "Deadlift - 1.5 Bodyweight Barbell\nBench Press - Bodyweight Barbell\nClean - 3/4 Bodyweight Barbell";
             index++;
 
-            this.records.push(new Record("Angie",RecordType.time,[MovementID.pullup, MovementID.pushup, MovementID.airSquat, MovementID.situp], this.allAgeGroups));
-            this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
-            this.records[index].description = "For Time\n100 Pullups\n100 Pushups\n100 Situps\n100 Squats";
-            index++;
-
             this.records.push(new Record("Total",RecordType.weight,[MovementID.backSquat, MovementID.press, MovementID.deadlift], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For Max Weight\nBack Squat\nPress\nDeadlift";
