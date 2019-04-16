@@ -2,9 +2,44 @@
     display: flex;
     flex-direction: column;
     width: 250px;
-    height: 250px;
+    min-height: 250px;
+    max-height: 350px;
     background-color: white;
     position: absolute;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    
+    .popup-title {
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        width: 100%;
+        flex: 0 0 30px;
+        margin-top: 10px;
+
+        .title {
+            font-weight: bold;
+            margin-left: 15px;
+            font-size: 18px;
+        }
+
+        .close {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+    }
+
+    .popup-text {
+        overflow-y: scroll;
+        text-align: right;
+        width: calc(100% - 30px);
+        margin-right: 15px;
+        margin-left:15px;
+
+        pre {
+            font-size: 14px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            white-space: pre-wrap;
+        }
+    }
 }

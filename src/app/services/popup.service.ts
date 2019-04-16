@@ -5,7 +5,7 @@ import { PopupComponent } from '../components/popup/popup.component';
 export class PopupData {
     closePopup: Function;
 
-    constructor(public title:string, public text:string) {}
+    constructor(public title:string, public text:string, public link:string, public linkText:string) {}
 }
 
 @Injectable()

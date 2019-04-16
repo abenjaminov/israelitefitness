@@ -19,7 +19,7 @@ export class PopupComponent implements AfterViewInit {
     var $window = $(window);
 
     var height = $(this.popup.nativeElement).height();
-    var width = $(this.popup.nativeElement).height();
+    var width = $(this.popup.nativeElement).width();
 
     this.renderer.setStyle(this.popup.nativeElement,"top", (($window.height() / 2) - height / 2) + "px");
     this.renderer.setStyle(this.popup.nativeElement,"left", (($window.width() / 2) - width / 2) + "px");

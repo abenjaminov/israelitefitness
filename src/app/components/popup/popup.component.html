@@ -1,11 +1,16 @@
 <div class="ief-popup box" #popup>
   <div class="popup-title">
-    {{data.title}}
+    <div class="title">
+        {{data.title}}
+    </div>
+    <div class="close" (click)="closePopup()">
+      <i class="far fa-times-circle"></i>
+    </div>
   </div>
   <div class="popup-text">
-    {{data.text}}
+    <pre>{{data.text}}</pre>
   </div>
-  <div (click)="closePopup()">
-    Click here to close
+  <div class="popup-footer-link">
+    <a [href]="data.link">{{data.linkText}}</a>
   </div>
 </div>

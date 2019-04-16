@@ -131,7 +131,7 @@ export class RecordService {
 
             this.records.push(new Record("Amanda",RecordType.time,[MovementID.muscleup, MovementID.squatSnatch], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
-            this.records[index].description = "For time\n9-7-5 reps of\nMuscleups\nSquat Snatches";
+            this.records[index].description = "For time\n9-7-5 reps of\nRing Muscleups\nSquat Snatches";
             this.records[index].weights = "Men - 60kg Barbell\nWomen - 42.5kg Barbell"
             index++;
 
@@ -162,7 +162,7 @@ export class RecordService {
             this.records[index].description = "Maximum reps unbroken";
             index++;
 
-            this.records.push(new Record("Muscleups",RecordType.reps,[MovementID.muscleup], this.allAgeGroups));
+            this.records.push(new Record("Ring Muscleups",RecordType.reps,[MovementID.muscleup], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "Maximum reps unbroken";
             index++;
