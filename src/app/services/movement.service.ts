@@ -45,6 +45,7 @@ export class MovementService {
 
     loadMovements() : Observable<any> {
         return of({}).pipe(tap(() => {
+            this.movements = [];
             var index = 0;
             this.movements.push(new Movement(MovementID.thruster, "Thruster"));
             this.movements[index].standardText = "התנועה מתחילה כאשר המוט נמצא על הרצפה\n\n על האתלט להרים את המוט לגובה כתפיים ולרדת לסקווט כאשר גובה האגן מתחת לקו הברך\n\n לאחר מכן תוך כדי התיישרות לדחוף את המוט עד מעל הראש\n\nהחזרה נספרת כאשר האתלט נמצא בהתיישרות מלאה בברכיו ובידיו בקו אחד מתוח והמוט מעל ראשו"
