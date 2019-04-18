@@ -1,5 +1,5 @@
 <div class="ief-standards view">
-  <div class="movement-item stripe-item" (click)="movementServiceץmovementClicked(movement)" *ngFor="let movement of movementService.movements; let $index = index">
+  <div class="movement-item stripe-item" (click)="movementService.movementClicked(movement)" *ngFor="let movement of movementService.movements; let $index = index">
     <div class="stripe-icon">
       {{$index + 1}}
     </div>
