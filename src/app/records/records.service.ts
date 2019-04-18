@@ -33,7 +33,7 @@ export enum AgeGroupType {
   
     constructor(private name:string,
                 private recordType:RecordType, 
-                private movements: Array<MovementID>,
+                public movements: Array<MovementID>, // Test
                 ageGroups: Array<AgeGroup>,
                 ) {
       this.ageGroups = [];
