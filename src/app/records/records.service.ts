@@ -105,7 +105,7 @@ export class RecordService {
             this.records[index].weights = "Men - 102.5kg Barbell \nWomen - 70kg Barbell"
             index++;
 
-            this.records.push(new Record("Elizabeth",RecordType.time,[MovementID.squatClean, MovementID.ringDip], this.allAgeGroups));
+            this.records.push(new Record("Elizabeth",RecordType.time,[MovementID.clean, MovementID.ringDip], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For Time\n21-15-9 reps of\nSquat Cleans\nRing Dips";
             this.records[index].weights = "Men - 60kg Barbell\nWomen - 42.5kg Barbell"
@@ -129,16 +129,10 @@ export class RecordService {
             this.records[index].weights = "Men - 9kg WallBall to 3 meter target \nWomen - 6kg WallBall to 2.74 meter target";
             index++;
 
-            this.records.push(new Record("Amanda",RecordType.time,[MovementID.muscleup, MovementID.squatSnatch], this.allAgeGroups));
+            this.records.push(new Record("Amanda",RecordType.time,[MovementID.muscleup, MovementID.snatch], this.allAgeGroups));
             this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
             this.records[index].description = "For time\n9-7-5 reps of\nRing Muscleups\nSquat Snatches";
             this.records[index].weights = "Men - 60kg Barbell\nWomen - 42.5kg Barbell"
-            index++;
-
-            this.records.push(new Record("Linda",RecordType.time,[MovementID.deadlift, MovementID.benechPress, MovementID.clean], this.allAgeGroups));
-            this.records[index].setRecord(AgeGroupType.ag1834, "1:41",new Date(2019,21,3),"Israel Israeli");
-            this.records[index].description = "For Time\n10-9-8-7-6-5-4-3-2-1 reps of\nDeadlifts\nBench Presses\nCleans";
-            this.records[index].weights = "Deadlift - 1.5 Bodyweight Barbell\nBench Press - Bodyweight Barbell\nClean - 3/4 Bodyweight Barbell";
             index++;
 
             this.records.push(new Record("Total",RecordType.weight,[MovementID.backSquat, MovementID.press, MovementID.deadlift], this.allAgeGroups));

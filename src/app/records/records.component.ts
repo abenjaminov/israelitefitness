@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecordService } from './records.service';
+import { RecordService, Record } from './records.service';
 
 
 
@@ -19,5 +19,9 @@ export class RecordsComponent implements OnInit {
     this.recordService.loadRecords().subscribe(() => {
       
     })
+  }
+
+  onRecordClicked(record: Record) {
+
   }
 }
