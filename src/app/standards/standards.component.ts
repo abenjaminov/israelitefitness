@@ -16,8 +16,4 @@ export class StandardsComponent implements OnInit {
       
     })
   }
-
-  movementClicked(movement: Movement) {
-    this.popupService.showPopup(new PopupData(movement.name,movement.standardText,'','סרטון התדגה'));
-  }
 }

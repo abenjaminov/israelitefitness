@@ -12,6 +12,7 @@ import { MovementService } from './services/movement.service';
 import { PopupService } from './services/popup.service';
 import { PopupComponent } from './components/popup/popup.component';
 import { ComponentHostDirective } from './components/directives/component-host.directive';
+import { RecordPageComponent } from './records/record-page/record-page.component';
 
 @NgModule({
   declarations: [ 
@@ -21,7 +22,8 @@ import { ComponentHostDirective } from './components/directives/component-host.d
     SideMenuComponent,
     StandardsComponent,
     PopupComponent,
-    ComponentHostDirective
+    ComponentHostDirective,
+    RecordPageComponent
   ],
   imports: [
     BrowserModule,

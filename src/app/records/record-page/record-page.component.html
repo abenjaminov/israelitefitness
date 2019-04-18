@@ -1,0 +1,13 @@
+<div>
+  <div class="movement-item stripe-item" (click)="movementService.movementClicked(movement)" *ngFor="let movement of selectedRecord.movements">
+    <div class="stripe-icon">
+      {{movement.number}}
+    </div>
+    <div class="stripe-value">
+      {{movement.name}}
+    </div>
+    <div class="stripe-right">
+        <i class="fas fa-info-circle"></i>
+      </div>
+  </div>
+</div>

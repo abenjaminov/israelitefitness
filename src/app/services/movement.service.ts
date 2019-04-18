@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from 'rxjs';
 import { tap }  from 'rxjs/operators'
+import { PopupService, PopupData } from './popup.service';
 
 export class Movement {
     standardText:string;
 
-    constructor(public number:number, public name:string) {
+    constructor(public movementId:MovementID, public name:string) {
 
     }
 }
@@ -32,14 +33,15 @@ export enum MovementID {
     situp = 19,
     backSquat = 20,
     shoulderToOverhead = 21,
-    barMuscleup = 22
+    barMuscleup = 22,
+    general = 23
 }
 
 @Injectable()
 export class MovementService {
     public movements: Array<Movement> = [];
 
-    constructor() {
+    constructor(private popupService: PopupService) {
 
     }
 
@@ -47,6 +49,11 @@ export class MovementService {
         return of({}).pipe(tap(() => {
             this.movements = [];
             var index = 0;
+
+            this.movements[index] = new Movement(MovementID.general, "General");
+            this.movements[index].standardText = 'בתחילת האימון יש להציג את שם האתלט בן כמה הוא ואיזה אימון הוא עושה\n\nאין להעיזר בברכיים על מנת לקום באמצע תנועה\n\nאין להעיזר בידיים על מנת להתיישר בכל תנועות הסקווט\n\nאין לזרוק את המוט מאחורי הראש בשום מצב\n\nאין לזרוק מוט ריק על הרצפה\n\nעל האתלט להשאר בכל זמו נתון בתוך זוית הצילום\n\nניתן להיעזור באדם נוסף לספירה של חזרות ומיקום של ציוד לפני, במהלך ואחרי האימון\n\nיש להציג שעון תקין בכל זמן הצילום\n\nבסוף כל אימון יש להציג את המשקולות והמוט בהן השתמשתם'
+            index++;
+
             this.movements.push(new Movement(MovementID.thruster, "Thruster"));
             this.movements[index].standardText = "התנועה מתחילה כאשר המוט נמצא על הרצפה\n\n על האתלט להרים את המוט לגובה כתפיים ולרדת לסקווט כאשר גובה האגן מתחת לקו הברך\n\n לאחר מכן תוך כדי התיישרות לדחוף את המוט עד מעל הראש\n\nהחזרה נספרת כאשר האתלט נמצא בהתיישרות מלאה בברכיו ובידיו בקו אחד מתוח והמוט מעל ראשו"
             index++;
@@ -113,10 +120,10 @@ export class MovementService {
             index++;
             this.movements.push(new Movement(MovementID.barMuscleup, "Bar Muscleup"));
             this.movements[index].standardText = 'התנועה מתחיל כאשר האתלט בתליה מלאה על המתח, ידיו ישרות\n\nעל האתלט להביא את עצמו עד אשר הוא עולה מעל המתח כאשר הוא אינו נוגע במתח עם שום חלק אחר של הגוף מאשר ידיו\n\nהתנועה תספר כאשר האתלט נמצא מעל המתח כאשר ידיו ישרות לגמרי, המידה והאתלט בוחר לשרשר חזרות עליו להגיע לתליה מלאה בכל פעם לפני שהחזרה הבאה תתחיל\n\nבמידה והאתלט בוחר בשיטת הקיפינג אין לעבור את גובה המתח עם הרגליים';
-            index++;
-
-            this.movements[index] = new Movement(23, "General");
-            this.movements[index].standardText = 'אין להעיזר בברכיים על מנת לקום באמצע תנועה\n\nאין להעיזר בידיים על מנת להתיישר בכל תנועות הסקווט\n\nאין לזרוק את המוט מאחורי הראש בשום מצב\n\nאין לזרוק מוט ריק על הרצפה\n\nעל האתלט להשאר בכל זמו נתון בתוך זוית הצילום\n\nניתן להיעזור באדם נוסף לספירה של חזרות ומיקום של ציוד לפני, במהלך ואחרי האימון\n\nיש להציג שעון תקין בכל זמן הצילום\n\nבסוף כל אימון יש להציג את המשקולות והמוט בהן השתמשתם'
         }));
     }
+
+    movementClicked(movement: Movement) {
+        this.popupService.showPopup(new PopupData(movement.name,movement.standardText,'','סרטון התדגה'));
+      }
 }
